@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/relativelayout"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true">
+
+
+            <LinearLayout
+                android:background="@drawable/titlebar_background"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_centerInParent="true"
+                >
+                <com.amy.monthweekmaterialcalendarview.DropIndicator
+                    android:id="@+id/circleIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    app:circle_color="@color/colorPrimary"
+                    app:click_color="@color/white"
+                    app:color1="@color/white"
+                    app:color2="@color/white"
+                    app:duration="500"
+                    app:radius="14dp"
+                    app:scale="1">
+                <TextView
+                    android:id="@+id/titlebar_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="月"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/titlebar_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="周"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+                </com.amy.monthweekmaterialcalendarview.DropIndicator>
+            </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView
+        android:id="@+id/slidelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearlayout">
+
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/calendarView_month_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mcv_selectionColor="@color/colorPrimary"
+            app:mcv_dateTextAppearance="@style/TextAppearance.MaterialCalendarWidget.Date"
+            app:mcv_calendarMode="month"
+            app:mcv_showOtherDates="defaults|other_months"
+            app:mcv_showWeekView="false" />
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/calendarView_week_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:visibility="invisible"
+            app:mcv_selectionColor="@color/colorPrimary"
+            app:mcv_dateTextAppearance="@style/TextAppearance.MaterialCalendarWidget.Date"
+            app:mcv_calendarMode="week"
+            app:mcv_showTopBar="false"
+            app:mcv_showWeekView="false" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical" />
+
+
+        <LinearLayout
+            android:id="@+id/weekview_top"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="周日" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="周一" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="周二" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="周三" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="周四" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="周五" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="周六" />
+
+        </LinearLayout>
+
+    </com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView>
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/relativelayout"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/tv_selectdate"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="选中日期"
+            android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/tv_previous"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="上一个月"
+            android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="下一个月"
+            android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/tv_today"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="今天"
+            android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="设置"
+            android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/tv_decorator"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="样式"
+            android:textColor="@color/colorPrimary" />
+
+    </LinearLayout>
+</RelativeLayout>

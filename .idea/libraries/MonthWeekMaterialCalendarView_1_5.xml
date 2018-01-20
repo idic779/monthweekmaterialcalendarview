@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="MonthWeekMaterialCalendarView-1.5">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.idic779/MonthWeekMaterialCalendarView/1.5/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.idic779/MonthWeekMaterialCalendarView/1.5/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.idic779/MonthWeekMaterialCalendarView/1.5/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

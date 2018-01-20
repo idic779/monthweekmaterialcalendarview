@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="mcv_pager" type="id" />
+    <item name="calendarView_month_mode" type="id" />
+    <item name="calendarView_week_mode" type="id" />
+    <item name="recyclerView" type="id" />
+    <item name="weekview_top" type="id" />
+</resources>

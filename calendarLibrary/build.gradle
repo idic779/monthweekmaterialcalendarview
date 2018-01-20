@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.novoda.bintray-release'
+group='idic779'
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName version
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+
+}
+
+
+def siteUrl = 'https://github.com/idic779/MonthWeekMaterialCalendarView'   // 项目的主页
+def gitUrl = 'https://github.com/idic779/MonthWeekMaterialCalendarView.git'   // Git仓库的url
+//Properties properties = new Properties()
+//properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
+}
+
+
+
+//android.libraryVariants.all { variant ->
+//    task("generate${variant.name.capitalize()}Javadoc", type: Javadoc) {
+//        title "Material CalendarView ${version}"
+//        description "Generates Javadoc for $variant.name."
+//        source = variant.javaCompile.source
+//        classpath = files(variant.javaCompile.classpath.files, project.android.getBootClasspath())
+//        exclude '**/BuildConfig.java'
+//        exclude '**/R.java'
+//        exclude 'android/support/v4/view/BetterViewPager.java'
+//        options {
+//            links "http://docs.oracle.com/javase/7/docs/api/"
+//            linksOffline "http://d.android.com/reference", "${android.sdkDirectory}/docs/reference"
+//        }
+//    }
+//}
