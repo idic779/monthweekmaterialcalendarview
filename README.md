@@ -1,14 +1,16 @@
 # MonthWeekMaterialCalendarView
-[apk download](https://github.com/idic779/MonthWeekMaterialCalendarView/blob/master/monthweekview.apk)
+
 ![水滴效果.gif](http://upload-images.jianshu.io/upload_images/2672721-6efd3e0c7670f44d.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 ![普通切换.gif](http://upload-images.jianshu.io/upload_images/2672721-9554d6936f1390a4.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
-觉得有帮助的可以给个star,
-有问题联系 idic779@163.com
+
+[apk download](https://github.com/idic779/MonthWeekMaterialCalendarView/blob/master/monthweekview.apk)
+觉得有帮助的可以给个star,有问题联系 idic779@163.com
+
 实现过程
 [纵享丝滑滑动切换的周月日历，可高度定制，仿小米日历](https://juejin.im/post/5a631efd6fb9a01ca8720f80)
 
 
-之前开发任务中有涉及到年月日日历的切换效果，由于是需要联动，想到的方向大概有3种，要么通过处理view的touch事件，要么是通过自定义`behavior`去实现，要么是通过ViewDragHelper这个神器去实现，网上比较多的是通过自定义bahavior去实现，本文使用的是第三种方法，实现的是一个可高度定制自由切换的周月日历视图,提供一种思路去实现页面联动效果。
+  之前开发任务中有涉及到年月日日历的切换效果，由于是需要联动，想到的方向大概有3种，要么通过处理view的touch事件，要么是通过自定义behavior去实现，要么是通过ViewDragHelper这个神器去实现，网上比较多的是通过自定义bahavior去实现，本文使用的是第三种方法，实现的是一个可高度定制自由切换的周月日历视图,提供一种思路去实现页面联动效果。
 #### features
 * 可以控制是否允许左右滑动，上下滑动，切换年月
 * 流畅的上下周月模式切换
