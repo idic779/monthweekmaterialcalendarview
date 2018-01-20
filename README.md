@@ -119,7 +119,8 @@ dependencies {
 
 
 * step 3: 如何使用
- 设置当前日期，日历才会滚动到对应日期
+
+设置当前日期，日历才会滚动到对应日期
 monthWeekMaterialCalendarView.setCurrentDate(selectedDate);
 设置选中日期
 monthWeekMaterialCalendarView.setSelectedDate(selectedDate)
