@@ -121,7 +121,9 @@ dependencies {
 * step 3: 如何使用
 
 * 设置当前日期，日历才会滚动到对应日期
+
 monthWeekMaterialCalendarView.setCurrentDate(selectedDate);
+
 * 设置选中日期
 monthWeekMaterialCalendarView.setSelectedDate(selectedDate)
 * 添加日历的样式，例如红点 或者自定义图案
@@ -188,6 +190,7 @@ monthWeekMaterialCalendarView.setSelectionColor
             app:mcv_showWeekView="false" />
 ```
 ###还可以怎么用
+
 接下来说下你可以怎么去定制？如果你想替换项目中的月和周视图的话，很简单，只需要你自己的周月视图必须有一个方法获得单行日历的高度(例如我的库中的MaterialCalendarView.getItemHeight() )，然后把这个月视图和周视图，分别在`MonthWeekMaterialCalendarView`里面按照顺序放到对应位置即可。然后再`setListener()`里面设置相关的回调处理，例如日期选中或者月份切换的回调等。
 
 更多的使用方法可以下载demo参考
