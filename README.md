@@ -120,25 +120,25 @@ dependencies {
 
 * step 3: 如何使用
 
-设置当前日期，日历才会滚动到对应日期
+* 设置当前日期，日历才会滚动到对应日期
 monthWeekMaterialCalendarView.setCurrentDate(selectedDate);
-设置选中日期
+* 设置选中日期
 monthWeekMaterialCalendarView.setSelectedDate(selectedDate)
-添加日历的样式，例如红点 或者自定义图案
+* 添加日历的样式，例如红点 或者自定义图案
 monthWeekMaterialCalendarView.addDecorator(new EventDecorator(Color.RED, dates))
-移除日历样式
+* 移除日历样式
 monthWeekMaterialCalendarView.removeDecorators();
-设置当前的模式
+* 设置当前的模式
 monthWeekMaterialCalendarView.setMode(MonthWeekMaterialCalendarView.Mode.MONTH)
-跳转到上一个月
+* 跳转到上一个月
 monthWeekMaterialCalendarView.goToPrevious();
-跳转到下个月
+* 跳转到下个月
 monthWeekMaterialCalendarView.goToNext();
-设置是否允许竖直拖动，默认是允许拖动切换周月模式
+* 设置是否允许竖直拖动，默认是允许拖动切换周月模式
 monthWeekMaterialCalendarView.setCanDrag
-设置是否允许左右滑动
+* 设置是否允许左右滑动
  monthWeekMaterialCalendarView.setPagingEnabled
-添加选中日期、模式改变 或者月份改变的回调
+* 添加选中日期、模式改变 或者月份改变的回调
 
 ```java
     monthWeekMaterialCalendarView.state().edit()
@@ -162,7 +162,7 @@ monthWeekMaterialCalendarView.setCanDrag
             }
         }).commit();
 ```
-设置选中颜色
+* 设置选中颜色
 monthWeekMaterialCalendarView.setSelectionColor
 因为基于MaterialCalendarView的周和月视图组成的，所以可以在XML中设置选中颜色，字体样式等等
 ```xml
@@ -187,7 +187,7 @@ monthWeekMaterialCalendarView.setSelectionColor
             app:mcv_showTopBar="false"
             app:mcv_showWeekView="false" />
 ```
-##还可以怎么用
+###还可以怎么用
 接下来说下你可以怎么去定制？如果你想替换项目中的月和周视图的话，很简单，只需要你自己的周月视图必须有一个方法获得单行日历的高度(例如我的库中的MaterialCalendarView.getItemHeight() )，然后把这个月视图和周视图，分别在`MonthWeekMaterialCalendarView`里面按照顺序放到对应位置即可。然后再`setListener()`里面设置相关的回调处理，例如日期选中或者月份切换的回调等。
 
 更多的使用方法可以下载demo参考
