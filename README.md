@@ -128,18 +128,25 @@ dependencies {
 
     monthWeekMaterialCalendarView.setSelectedDate(selectedDate)
 * 添加日历的样式，例如红点 或者自定义图案
+
     monthWeekMaterialCalendarView.addDecorator(new EventDecorator(Color.RED, dates))
 * 移除日历样式
+
     monthWeekMaterialCalendarView.removeDecorators();
 * 设置当前的模式
+
     monthWeekMaterialCalendarView.setMode(MonthWeekMaterialCalendarView.Mode.MONTH)
 * 跳转到上一个月
+
     monthWeekMaterialCalendarView.goToPrevious();
 * 跳转到下个月
+
     monthWeekMaterialCalendarView.goToNext();
 * 设置是否允许竖直拖动，默认是允许拖动切换周月模式
+
     monthWeekMaterialCalendarView.setCanDrag
 * 设置是否允许左右滑动
+
     monthWeekMaterialCalendarView.setPagingEnabled
 * 添加选中日期、模式改变 或者月份改变的回调
 
