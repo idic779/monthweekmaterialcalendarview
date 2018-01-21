@@ -76,6 +76,16 @@ task javadoc(type: Javadoc) {
     classpath += configurations.compile
 }
 
+javadoc {
+    options{
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
