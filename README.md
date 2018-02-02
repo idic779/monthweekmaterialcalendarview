@@ -4,12 +4,12 @@
 
 [apk download](https://github.com/idic779/MonthWeekMaterialCalendarView/blob/master/monthweekview.apk)
 
-觉得有帮助的可以给个star,有问题联系 idic779@163.com  QQ 290950778
+#### 觉得有帮助的可以给个star,有问题联系 idic779@163.com  QQ 290950778
 
 ![水滴效果.gif](http://upload-images.jianshu.io/upload_images/2672721-6efd3e0c7670f44d.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 ![普通切换.gif](http://upload-images.jianshu.io/upload_images/2672721-9554d6936f1390a4.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 
-实现过程
+可以点击进去查看实现过程
 [纵享丝滑滑动切换的周月日历，可高度定制，仿小米日历](https://juejin.im/post/5a631efd6fb9a01ca8720f80)
 
 
@@ -197,7 +197,7 @@ dependencies {
             app:mcv_showTopBar="false"
             app:mcv_showWeekView="false" />
 ```
-    # 还可以怎么用
+# 还可以怎么用
 
       接下来说下你可以怎么去定制？如果你想替换项目中的月和周视图的话，很简单，
 
@@ -208,4 +208,6 @@ dependencies {
     然后再setListener()里面设置相关的回调处理，例如日期选中或者月份切换的回调等。
 
     更多的使用方法可以下载demo参考
+# thanks
+    [material-calendarview](https://github.com/prolificinteractive/material-calendarview)
 
