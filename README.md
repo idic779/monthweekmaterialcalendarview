@@ -209,5 +209,5 @@ dependencies {
 
     更多的使用方法可以下载demo参考
 # thanks
-    [material-calendarview](https://github.com/prolificinteractive/material-calendarview)
+[material-calendarview](https://github.com/prolificinteractive/material-calendarview)
 
