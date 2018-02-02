@@ -4,7 +4,7 @@
 
 [apk download](https://github.com/idic779/MonthWeekMaterialCalendarView/blob/master/monthweekview.apk)
 
-觉得有帮助的可以给个star,有问题联系 idic779@163.com
+觉得有帮助的可以给个star,有问题联系 idic779@163.com  QQ 290950778
 
 ![水滴效果.gif](http://upload-images.jianshu.io/upload_images/2672721-6efd3e0c7670f44d.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 ![普通切换.gif](http://upload-images.jianshu.io/upload_images/2672721-9554d6936f1390a4.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
@@ -197,7 +197,7 @@ dependencies {
             app:mcv_showTopBar="false"
             app:mcv_showWeekView="false" />
 ```
-    ### 还可以怎么用
+    # 还可以怎么用
 
       接下来说下你可以怎么去定制？如果你想替换项目中的月和周视图的话，很简单，
 
