@@ -5,10 +5,9 @@
 [apk download](https://github.com/idic779/MonthWeekMaterialCalendarView/blob/master/monthweekview.apk)
 
 #### 觉得有帮助的可以给个star,有问题联系 idic779@163.com  QQ 290950778
-
+![样式.gif](http://upload-images.jianshu.io/upload_images/2672721-d191fe401c5b22c9.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![水滴效果.gif](http://upload-images.jianshu.io/upload_images/2672721-6efd3e0c7670f44d.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 ![普通切换.gif](http://upload-images.jianshu.io/upload_images/2672721-9554d6936f1390a4.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
-
 可以点击进去查看实现过程
 [纵享丝滑滑动切换的周月日历，可高度定制，仿小米日历](https://juejin.im/post/5a631efd6fb9a01ca8720f80)
 
@@ -17,7 +16,8 @@
 #### features
 * 可以控制是否允许左右滑动，上下滑动，切换年月
 * 流畅的上下周月模式切换
-* 自定义日历样式
+* 允许选择农历和普通日历
+* 丰富自定义日历样式
 * 基于material-calendarview 这个库实现，可以下载源码根据需求定制效果
 
 #### Usages
@@ -197,6 +197,33 @@ dependencies {
             app:mcv_showTopBar="false"
             app:mcv_showWeekView="false" />
 ```
+# 定制用法
+如果你想给单独的日期视图设置一些样式的话，例如周末右上角有个图标这样子的需求之类的话，你可以写一个类继承自DayViewDecorator
+```java
+public class RemindDecorator implements DayViewDecorator {
+    private final Calendar calendar = Calendar.getInstance();
+    private Context context;
+    public RemindDecorator(Context context) {
+        this.context=context;
+    }
+    @Override
+    public boolean shouldDecorate(CalendarDay day) {
+        day.copyTo(calendar);
+        int weekDay = calendar.get(Calendar.DAY_OF_WEEK);
+        return weekDay == Calendar.SATURDAY || weekDay == Calendar.SUNDAY;
+    }
+
+    @Override
+    public void decorate(DayViewFacade view) {
+        view.addSpan(new RestSpan(context));
+    }
+}
+```
+* shouldDecorate()这个方法是判断是否需要添加Decorator的条件
+* decorate()这个方法可以对显示样式做一些操作
+
+DayViewFacade 可以通过setSelectionDrawable()，setBackgroundDrawable(),addSpan()设置样式，尤其是addSpan的方法，因为你传进去的是一个span,所以你可以在里面做很多自定义样式的操作，例如
+[RestSpan.java](https://github.com/idic779/monthweekmaterialcalendarview/blob/master/app/src/main/java/com/amy/monthweekmaterialcalendarview/decorators/RestSpan.java)周末右上角加个图标，甚至可以让图标动起来。
 # 还可以怎么用
 
       接下来说下你可以怎么去定制？如果你想替换项目中的月和周视图的话，很简单，
