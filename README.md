@@ -5,9 +5,10 @@
 [apk download](https://github.com/idic779/MonthWeekMaterialCalendarView/blob/master/monthweekview.apk)
 
 #### 觉得有帮助的可以给个star,有问题联系 idic779@163.com  QQ 290950778
-![样式.gif](http://upload-images.jianshu.io/upload_images/2672721-d191fe401c5b22c9.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![样式.gif](http://upload-images.jianshu.io/upload_images/2672721-d191fe401c5b22c9.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 ![水滴效果.gif](http://upload-images.jianshu.io/upload_images/2672721-6efd3e0c7670f44d.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
-![普通切换.gif](http://upload-images.jianshu.io/upload_images/2672721-9554d6936f1390a4.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
+![样式1](https://github.com/idic779/monthweekmaterialcalendarview/blob/master/app/p1.jpg)
+![样式2](https://github.com/idic779/monthweekmaterialcalendarview/blob/master/app/p2.jpg)
 可以点击进去查看实现过程
 [纵享丝滑滑动切换的周月日历，可高度定制，仿小米日历](https://juejin.im/post/5a631efd6fb9a01ca8720f80)
 
