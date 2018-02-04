@@ -33,7 +33,7 @@ allprojects {
 
 dependencies {
     ......
-   compile 'com.github.idic779:monthweekmaterialcalendarview:1.5'
+   compile 'com.github.idic779:monthweekmaterialcalendarview:1.6'
 }
 ```
 
