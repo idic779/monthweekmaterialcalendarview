@@ -7,17 +7,13 @@ import android.support.v4.util.SparseArrayCompat;
  * Pager adapter backing the calendar view
  */
 class MonthPagerAdapter extends CalendarPagerAdapter<MonthView> {
-    private boolean mShowWeekView;
-    private boolean mShowDayView;
-    MonthPagerAdapter(MaterialCalendarView mcv,boolean showDayView,boolean showWeekView) {
+    MonthPagerAdapter(MaterialCalendarView mcv) {
         super(mcv);
-        mShowDayView=showDayView;
-        mShowWeekView=showWeekView;
     }
 
     @Override
     protected MonthView createView(int position) {
-        return new MonthView(mcv, getItem(position), mcv.getFirstDayOfWeek(), mShowDayView,mShowWeekView);
+        return new MonthView(mcv, getItem(position), mcv.getFirstDayOfWeek());
     }
 
     @Override

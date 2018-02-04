@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.amy.monthweek.materialcalendarview.*;
 import com.prolificinteractive.materialcalendarview.format.ArrayWeekDayFormatter;
 import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormatter;
 import com.prolificinteractive.materialcalendarview.format.DayFormatter;
@@ -235,10 +236,6 @@ public class MaterialCalendarView extends ViewGroup {
     private int firstDayOfWeek;
 
     private State state;
-    //是否显示DayView
-    private boolean showDayView;
-    //是否显示DayView
-    private boolean showWeekView;
     //是否显示Topbar
     private boolean showTopBar;
     public MaterialCalendarView(Context context) {
@@ -291,8 +288,9 @@ public class MaterialCalendarView extends ViewGroup {
                     R.styleable.MaterialCalendarView_mcv_firstDayOfWeek,
                     -1
             );
-            showDayView=a.getBoolean(R.styleable.MaterialCalendarView_mcv_showDayView,true);
-            showWeekView=a.getBoolean(R.styleable.MaterialCalendarView_mcv_showWeekView,true);
+            Preference.showDayView=a.getBoolean(R.styleable.MaterialCalendarView_mcv_showDayView,true);
+            Preference.showWeekView=a.getBoolean(R.styleable.MaterialCalendarView_mcv_showWeekView,true);
+            Preference.showLunar=a.getBoolean(R.styleable.MaterialCalendarView_mcv_showLunar,false);
             showTopBar=a.getBoolean(R.styleable.MaterialCalendarView_mcv_showTopBar,true);
             titleChanger.setOrientation(
                     a.getInteger(R.styleable.MaterialCalendarView_mcv_titleAnimationOrientation,
@@ -396,7 +394,7 @@ public class MaterialCalendarView extends ViewGroup {
 
         if (isInEditMode()) {
             removeView(pager);
-            MonthView monthView = new MonthView(this, currentMonth, getFirstDayOfWeek(),showDayView,showWeekView);
+            MonthView monthView = new MonthView(this, currentMonth, getFirstDayOfWeek());
             monthView.setSelectionColor(getSelectionColor());
             monthView.setDateTextAppearance(adapter.getDateTextAppearance());
             monthView.setWeekDayTextAppearance(adapter.getWeekDayTextAppearance());
@@ -759,6 +757,14 @@ public class MaterialCalendarView extends ViewGroup {
      * @param resourceId The text appearance resource id.
      */
     public void setDateTextAppearance(int resourceId) {
+        TypedValue typedValue = new TypedValue();
+        getContext().getTheme().resolveAttribute(resourceId, typedValue, true);
+        int[] attribute = new int[] { android.R.attr.textSize };
+        TypedArray array = getContext().obtainStyledAttributes(typedValue.resourceId, attribute);
+        int textSize = array.getDimensionPixelSize(0, 12);
+        Preference.dayTextSize= com.amy.monthweek.materialcalendarview.CalendarUtils.sp2px(
+                getContext(),textSize-2);
+        array.recycle();
         adapter.setDateTextAppearance(resourceId);
     }
 
@@ -1310,6 +1316,15 @@ public class MaterialCalendarView extends ViewGroup {
     }
 
     /**
+     * set show or hide lunar
+     * @param showLunar
+     */
+    public void setShowLunar(boolean showLunar){
+        Preference.showLunar=showLunar;
+        invalidateDecorators();
+    }
+
+    /**
      * Remove all decorators
      */
     public void removeDecorators() {
@@ -1579,11 +1594,11 @@ public class MaterialCalendarView extends ViewGroup {
 
         int weekCount = getWeekCountBasedOnMode();
         //如果是只显示顶部的的话 高度为2排
-        if (!showDayView) {
+        if (!Preference.showDayView) {
             weekCount=1;
         }
         //如果不显示顶部week并且当前模式为Months的话要减去顶部1排
-        if (!showWeekView&& calendarMode.equals(CalendarMode.MONTHS)) {
+        if (!Preference.showWeekView&& calendarMode.equals(CalendarMode.MONTHS)) {
             weekCount=weekCount-1;
         }
         final int viewTileHeight = getTopbarVisible() ? (weekCount + 1) : weekCount;
@@ -2003,10 +2018,10 @@ public class MaterialCalendarView extends ViewGroup {
         final CalendarPagerAdapter<?> newAdapter;
         switch (calendarMode) {
             case MONTHS:
-                newAdapter = new MonthPagerAdapter(this,showDayView,showWeekView);
+                newAdapter = new MonthPagerAdapter(this);
                 break;
             case WEEKS:
-                newAdapter = new WeekPagerAdapter(this,showDayView,showWeekView);
+                newAdapter = new WeekPagerAdapter(this);
                 break;
             default:
                 throw new IllegalArgumentException("Provided display mode which is not yet implemented");

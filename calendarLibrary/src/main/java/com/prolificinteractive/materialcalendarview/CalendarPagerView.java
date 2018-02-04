@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
+import com.amy.monthweek.materialcalendarview.Preference;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView.ShowOtherDates;
 import com.prolificinteractive.materialcalendarview.format.DayFormatter;
 import com.prolificinteractive.materialcalendarview.format.WeekDayFormatter;
@@ -37,10 +38,9 @@ abstract class CalendarPagerView extends ViewGroup implements View.OnClickListen
     private int firstDayOfWeek;
 
     private final Collection<DayView> dayViews = new ArrayList<>();
-    private boolean mShowDayView=true;
     public CalendarPagerView(@NonNull MaterialCalendarView view,
                              CalendarDay firstViewDay,
-                             int firstDayOfWeek,boolean showDayView,boolean showWeekView) {
+                             int firstDayOfWeek) {
         super(view.getContext());
         this.mcv = view;
         this.firstViewDay = firstViewDay;
@@ -48,11 +48,10 @@ abstract class CalendarPagerView extends ViewGroup implements View.OnClickListen
 
         setClipChildren(false);
         setClipToPadding(false);
-        mShowDayView=showDayView;
-        if (showWeekView) {
+        if (Preference.showWeekView) {
             buildWeekDays(resetAndGetWorkingCalendar());
         }
-        if (showDayView) {
+        if (Preference.showDayView) {
             buildDayViews(dayViews, resetAndGetWorkingCalendar());
         }
     }
@@ -184,6 +183,9 @@ abstract class CalendarPagerView extends ViewGroup implements View.OnClickListen
                 if (result.decorator.shouldDecorate(dayView.getDate())) {
                     result.result.applyTo(facadeAccumulator);
                 }
+            }
+            if (Preference.showLunar) {
+                facadeAccumulator.addLunar(dayView.getDate());
             }
             dayView.applyFacade(facadeAccumulator);
         }

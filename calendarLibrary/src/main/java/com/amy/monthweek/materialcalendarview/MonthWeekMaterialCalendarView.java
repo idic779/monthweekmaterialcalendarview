@@ -746,6 +746,11 @@ public class MonthWeekMaterialCalendarView extends FrameLayout implements SlideM
         mCalendarViewWeek.removeDecorator(decorator);
     }
 
+    public  void setShowLunar(boolean showLunar){
+        mCalendarViewMonth.setShowLunar(showLunar);
+        mCalendarViewWeek.setShowLunar(showLunar);
+    }
+
     public void removeDecorators() {
         mCalendarViewMonth.removeDecorators();
         mCalendarViewWeek.removeDecorators();

@@ -281,31 +281,5 @@ public class CalendarSmoothActivity extends AppCompatActivity {
             clickWeekAnimator();
         }
     }
-    private final OneDayDecorator oneDayDecorator = new OneDayDecorator();
-    @OnClick(R.id.tv_decorator)
-    public void clickdecorator() {
-
-        new AlertDialog.Builder(this).setItems(new CharSequence[]{"样式1", "样式2"}, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                monthWeekMaterialCalendarView.removeDecorators();
-                if (i == 0) {
-                    monthWeekMaterialCalendarView.addDecorators( new MySelectorDecorator(CalendarSmoothActivity.this),
-                        new HighlightWeekendsDecorator(),
-                        oneDayDecorator);
-                }
-                if (i == 1) {
-                // Add a decorator to disable prime numbered days
-//                slideMonthLayout.addDecorator(new PrimeDayDisableDecorator());
-                // Add a second decorator that explicitly enables days <= 10. This will work because
-                //  decorators are applied in order, and the system allows re-enabling
-                monthWeekMaterialCalendarView.addDecorator(new EnableOneToTenDecorator());
-                }
-
-
-
-            }
-        }).show();
-    }
 
 }

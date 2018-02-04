@@ -92,6 +92,14 @@
             android:layout_gravity="center"
             android:text="今天"
             android:textColor="@color/colorPrimary" />
+        <TextView
+            android:id="@+id/tv_decorator"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="多种样式"
+            android:textColor="@color/colorPrimary" />
     </LinearLayout>
 
 
@@ -107,8 +115,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:mcv_calendarMode="month"
-            app:mcv_showOtherDates="other_months"
-            app:mcv_showWeekView="false" />
+            app:mcv_showOtherDates="defaults|other_months"
+            app:mcv_showWeekView="false"
+            app:mcv_showLunar="true" />
 
         <com.prolificinteractive.materialcalendarview.MaterialCalendarView
             android:id="@+id/calendarView_week_mode"
@@ -118,7 +127,8 @@
             android:visibility="invisible"
             app:mcv_calendarMode="week"
             app:mcv_showTopBar="false"
-            app:mcv_showWeekView="false" />
+            app:mcv_showWeekView="false"
+            app:mcv_showLunar="true" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"

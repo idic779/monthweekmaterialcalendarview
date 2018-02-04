@@ -9,17 +9,13 @@ import java.util.concurrent.TimeUnit;
 
 @Experimental
 public class WeekPagerAdapter extends CalendarPagerAdapter<WeekView> {
-    private boolean showday;
-    private boolean showweek;
-    public WeekPagerAdapter(MaterialCalendarView mcv,boolean showdayView,boolean showWeekView) {
+    public WeekPagerAdapter(MaterialCalendarView mcv) {
         super(mcv);
-        showday=showdayView;
-        showweek=showWeekView;
     }
 
     @Override
     protected WeekView createView(int position) {
-        return new WeekView(mcv, getItem(position), mcv.getFirstDayOfWeek(),showday,showweek);
+        return new WeekView(mcv, getItem(position), mcv.getFirstDayOfWeek());
     }
 
     @Override
@@ -31,7 +27,6 @@ public class WeekPagerAdapter extends CalendarPagerAdapter<WeekView> {
     @Override
     protected boolean isInstanceOfView(Object object) {
         WeekView weekView= (WeekView) object;
-        Log.e("宽高",weekView.getMeasuredHeight()+"");
         return object instanceof WeekView;
     }
 

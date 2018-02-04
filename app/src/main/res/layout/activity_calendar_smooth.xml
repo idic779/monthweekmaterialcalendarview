@@ -197,14 +197,6 @@
             android:layout_gravity="center"
             android:text="设置"
             android:textColor="@color/colorPrimary" />
-        <TextView
-            android:id="@+id/tv_decorator"
-            android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="样式"
-            android:textColor="@color/colorPrimary" />
 
     </LinearLayout>
 </RelativeLayout>

@@ -17,9 +17,9 @@ public class WeekView extends CalendarPagerView {
 //    private boolean mShowWeek = true;
     public WeekView(@NonNull MaterialCalendarView view,
                     CalendarDay firstViewDay,
-                    int firstDayOfWeek, boolean showDayView,boolean showWeekView) {
+                    int firstDayOfWeek) {
 
-        super(view, firstViewDay, firstDayOfWeek,showDayView,showWeekView);
+        super(view, firstViewDay, firstDayOfWeek);
     }
 
 

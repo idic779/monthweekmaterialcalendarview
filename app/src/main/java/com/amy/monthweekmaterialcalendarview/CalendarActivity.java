@@ -1,9 +1,11 @@
 package com.amy.monthweekmaterialcalendarview;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,13 +14,20 @@ import android.widget.TextView;
 
 import com.amy.monthweek.materialcalendarview.CustomLinearLayoutManager;
 import com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView;
+import com.amy.monthweekmaterialcalendarview.decorators.ColorDecorator;
+import com.amy.monthweekmaterialcalendarview.decorators.EnableOneToTenDecorator;
 import com.amy.monthweekmaterialcalendarview.decorators.EventDecorator;
+import com.amy.monthweekmaterialcalendarview.decorators.HighlightWeekendsDecorator;
+import com.amy.monthweekmaterialcalendarview.decorators.MySelectorDecorator;
+import com.amy.monthweekmaterialcalendarview.decorators.OneDayDecorator;
+import com.amy.monthweekmaterialcalendarview.decorators.RemindDecorator;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormatter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -178,6 +187,48 @@ public class CalendarActivity extends AppCompatActivity {
         selectedDate = CalendarDay.today();
         monthWeekMaterialCalendarView.setCurrentDate(selectedDate);
         monthWeekMaterialCalendarView.setSelectedDate(selectedDate);
+    }
+    private final OneDayDecorator oneDayDecorator = new OneDayDecorator();
+    @OnClick(R.id.tv_decorator)
+    public void clickdecorator() {
+
+        new AlertDialog.Builder(this).setItems(new CharSequence[]{"普通效果","农历效果", "不同select颜色","带提醒图标","不允许点击","任意一张图背景"}, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                monthWeekMaterialCalendarView.removeDecorators();
+                if (i == 0) {
+                    monthWeekMaterialCalendarView.setShowLunar(false);
+                }
+                if (i == 1) {
+                    monthWeekMaterialCalendarView.setShowLunar(true);
+                }
+                if (i == 2) {
+                    int[] colors = new int []{Color.parseColor("#228BC34A")
+                            ,Color.parseColor("#8BC34A")
+                            ,Color.parseColor("#FFEB3B")
+                            ,Color.parseColor("#00BCD4")
+                            ,Color.parseColor("#BDBDBD")
+                    };
+                    monthWeekMaterialCalendarView.addDecorator(new ColorDecorator(new CalendarDay(2018,2,1),colors[1]));
+                    monthWeekMaterialCalendarView.addDecorator(new ColorDecorator(new CalendarDay(2018,2,5),colors[2]));
+                    monthWeekMaterialCalendarView.addDecorator(new ColorDecorator(new CalendarDay(2018,2,9),colors[3]));
+                }
+                if (i == 3) {
+                    monthWeekMaterialCalendarView.addDecorator(new RemindDecorator(CalendarActivity.this));
+                }
+                if (i == 4) {
+                    monthWeekMaterialCalendarView.addDecorator(new EnableOneToTenDecorator());
+                }
+                if (i == 5) {
+                    monthWeekMaterialCalendarView.addDecorators( new MySelectorDecorator(CalendarActivity.this),
+                            new HighlightWeekendsDecorator(),
+                            oneDayDecorator);
+                }
+
+
+
+            }
+        }).show();
     }
 }
 

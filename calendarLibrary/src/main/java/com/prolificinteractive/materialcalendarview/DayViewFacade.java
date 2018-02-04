@@ -3,6 +3,8 @@ package com.prolificinteractive.materialcalendarview;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 
+import com.prolificinteractive.materialcalendarview.spans.LunarSpan;
+
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -59,6 +61,17 @@ public class DayViewFacade {
         if (spans != null) {
             this.spans.add(new Span(span));
             isDecorated = true;
+        }
+    }
+
+    /**
+     * 添加农历
+     * @param calendarDay
+     */
+    protected void addLunar(CalendarDay calendarDay) {
+        if (spans != null) {
+            LunarSpan span =new LunarSpan(calendarDay);
+            this.spans.add(new Span(span));
         }
     }
 
