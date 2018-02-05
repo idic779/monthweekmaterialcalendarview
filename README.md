@@ -238,6 +238,23 @@ DayViewFacade 可以通过setSelectionDrawable()，setBackgroundDrawable(),addSp
     然后再setListener()里面设置相关的回调处理，例如日期选中或者月份切换的回调等。
 
     更多的使用方法可以下载demo参考
+License
+-------
+
+    Copyright 2018 amy
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
 # thanks
 [material-calendarview](https://github.com/prolificinteractive/material-calendarview)
 
