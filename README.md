@@ -4,7 +4,7 @@
 
 [apk download](https://github.com/idic779/MonthWeekMaterialCalendarView/blob/master/monthweekview.apk)
 
-#### 觉得有帮助的可以给个star,有问题联系 idic779@163.com  QQ 290950778
+#### 觉得有帮助的可以给个star,有问题联系 idic779@163.com  QQ 290950778，有定制问题直接提issue
 ![样式.gif](http://upload-images.jianshu.io/upload_images/2672721-d191fe401c5b22c9.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 ![水滴效果.gif](http://upload-images.jianshu.io/upload_images/2672721-6efd3e0c7670f44d.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 ![p1.jpg](http://upload-images.jianshu.io/upload_images/2672721-53133f774ecced59.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/600/h/436)
