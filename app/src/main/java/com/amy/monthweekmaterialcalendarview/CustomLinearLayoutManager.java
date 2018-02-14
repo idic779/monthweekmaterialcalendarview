@@ -1,13 +1,15 @@
-package com.amy.monthweek.materialcalendarview;
+package com.amy.monthweekmaterialcalendarview;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.amy.monthweek.materialcalendarview.ILayoutManager;
+
 /**
- * Created by dickliu on 2018/1/3.
+ * Created by Administrator on 2018/2/14 0014.
  */
 
-public class CustomLinearLayoutManager extends LinearLayoutManager {
+public class CustomLinearLayoutManager extends LinearLayoutManager implements ILayoutManager {
     private boolean isScrollEnabled = true;
 
     public CustomLinearLayoutManager(Context context) {

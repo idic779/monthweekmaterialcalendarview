@@ -13,13 +13,8 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.amy.monthweek.materialcalendarview.CustomLinearLayoutManager;
 import com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView;
-import com.amy.monthweekmaterialcalendarview.decorators.EnableOneToTenDecorator;
 import com.amy.monthweekmaterialcalendarview.decorators.EventDecorator;
-import com.amy.monthweekmaterialcalendarview.decorators.HighlightWeekendsDecorator;
-import com.amy.monthweekmaterialcalendarview.decorators.MySelectorDecorator;
-import com.amy.monthweekmaterialcalendarview.decorators.OneDayDecorator;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormatter;

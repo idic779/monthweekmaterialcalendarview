@@ -2,7 +2,6 @@ package com.amy.monthweek.materialcalendarview;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
-import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.os.Parcelable;
@@ -10,8 +9,10 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -24,7 +25,6 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
-import com.prolificinteractive.materialcalendarview.R;
 
 import java.util.Calendar;
 
@@ -322,19 +322,44 @@ public class MonthWeekMaterialCalendarView extends FrameLayout implements SlideM
     private boolean isAtTop(View view) {
         boolean isTop = false;
         if (view instanceof RecyclerView) {
-            if (((RecyclerView) view).getLayoutManager() instanceof LinearLayoutManager) {
-                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) ((RecyclerView) view).getLayoutManager();
-                if (linearLayoutManager.findFirstCompletelyVisibleItemPosition() == 0) {
-                    isTop = true;
+            if (((RecyclerView) view).getLayoutManager() instanceof ILayoutManager) {
+                if (((RecyclerView) view).getLayoutManager() instanceof LinearLayoutManager) {
+                    LinearLayoutManager linearLayoutManager = (LinearLayoutManager) ((RecyclerView) view).getLayoutManager();
+                    if (linearLayoutManager.findFirstCompletelyVisibleItemPosition() == 0) {
+                        isTop = true;
+                    }
+                }
+                if (((RecyclerView) view).getLayoutManager() instanceof GridLayoutManager) {
+                    GridLayoutManager gridLayoutManager = (GridLayoutManager) ((RecyclerView) view).getLayoutManager();
+                    if (gridLayoutManager.findFirstCompletelyVisibleItemPosition() == 0) {
+                        isTop = true;
+                    }
+                }
+                if (((RecyclerView) view).getLayoutManager() instanceof StaggeredGridLayoutManager) {
+                    StaggeredGridLayoutManager staggeredGridLayoutManager = (StaggeredGridLayoutManager) ((RecyclerView) view).getLayoutManager();
+                    int[] positions = new int[staggeredGridLayoutManager.getSpanCount()];
+                    staggeredGridLayoutManager.findFirstVisibleItemPositions(positions);
+                    if (findMin(positions) == 0) {
+                        isTop = true;
+                    }
                 }
             } else {
-                throw new IllegalArgumentException("RecyclerView layoutManager must be LinearLayoutManager");
+                throw new IllegalArgumentException("RecyclerView layoutManager must implement ILayoutManager");
             }
 
         }
         return isTop;
     }
 
+    private int findMin(int [] position) {
+        int min=position[0];
+        for (int value : position) {
+            if (value<min) {
+                min=value;
+            }
+        }
+        return  min;
+    }
     /**
      * 防止滑动过快越界
      *
@@ -395,7 +420,7 @@ public class MonthWeekMaterialCalendarView extends FrameLayout implements SlideM
     }
 
     public void setRecyclerViewCanScroll(boolean enable) {
-        ((CustomLinearLayoutManager) mRecyclerView.getLayoutManager()).setScrollEnabled(enable);
+        ((ILayoutManager) mRecyclerView.getLayoutManager()).setScrollEnabled(enable);
     }
 
     /**

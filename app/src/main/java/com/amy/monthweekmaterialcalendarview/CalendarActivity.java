@@ -12,7 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.amy.monthweek.materialcalendarview.CustomLinearLayoutManager;
+import com.amy.monthweek.materialcalendarview.ILayoutManager;
 import com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView;
 import com.amy.monthweekmaterialcalendarview.decorators.ColorDecorator;
 import com.amy.monthweekmaterialcalendarview.decorators.EnableOneToTenDecorator;
@@ -27,7 +27,6 @@ import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormat
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
