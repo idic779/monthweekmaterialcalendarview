@@ -23,7 +23,8 @@
 * 丰富自定义日历样式
 * 基于material-calendarview 这个库实现，可以下载源码根据需求定制效果
 #### 更新日志
-V1.7 支持grid and staggeredgrid layoutManager
+#### V1.7
+支持grid and staggeredgrid layoutManager
 
 #### Usages
 # step 1 : 添加依赖
