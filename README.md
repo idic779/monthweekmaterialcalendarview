@@ -121,8 +121,7 @@ dependencies {
                 android:text="周六" />
         </LinearLayout>
     </com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView>
-
-
+ ```
 # step 3: 如何使用
 
 * 底部的recycler的layoutManager要实现ILayoutManager接口，设置是否允许上下滑动，
