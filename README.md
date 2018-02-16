@@ -124,7 +124,7 @@ dependencies {
  ```
 # step 3: 如何使用
 
-* 底部的recycler的layoutManager要实现ILayoutManager接口，设置是否允许上下滑动，
+* 底部的recyclerView的layoutManager要实现ILayoutManager接口，设置是否允许上下滑动，
 例如示例中的[CustomLinearLayoutManager.java](https://github.com/idic779/monthweekmaterialcalendarview/blob/master/app/src/main/java/com/amy/monthweekmaterialcalendarview/CustomLinearLayoutManager.java)
 
 * 设置当前日期，日历才会滚动到对应日期
