@@ -22,9 +22,11 @@
 * 允许选择农历和普通日历
 * 丰富自定义日历样式
 * 基于material-calendarview 这个库实现，可以下载源码根据需求定制效果
+#### 更新日志
+V1.7 支持grid and staggeredgrid layoutManager
 
 #### Usages
-* step 1 : 添加依赖
+# step 1 : 添加依赖
 ```
 gradle
 allprojects {
@@ -36,11 +38,11 @@ allprojects {
 
 dependencies {
     ......
-   compile 'com.github.idic779:monthweekmaterialcalendarview:1.6'
+   compile 'com.github.idic779:monthweekmaterialcalendarview:1.7'
 }
 ```
 
-* step 2: 添加布局
+# step 2: 添加布局
 
   ``` <com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView
         android:id="@+id/slidelayout"
@@ -121,7 +123,10 @@ dependencies {
     </com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView>
 
 
-* step 3: 如何使用
+# step 3: 如何使用
+
+* 底部的recycler的layoutManager要实现ILayoutManager接口，设置是否允许上下滑动，
+例如示例中的[CustomLinearLayoutManager.java](https://github.com/idic779/monthweekmaterialcalendarview/blob/master/app/src/main/java/com/amy/monthweekmaterialcalendarview/CustomLinearLayoutManager.java)
 
 * 设置当前日期，日历才会滚动到对应日期
 
