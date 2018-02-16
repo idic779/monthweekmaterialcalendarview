@@ -44,7 +44,8 @@ dependencies {
 
 # step 2: 添加布局
 
-  ``` <com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView
+  ```
+  <com.amy.monthweek.materialcalendarview.MonthWeekMaterialCalendarView
         android:id="@+id/slidelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
