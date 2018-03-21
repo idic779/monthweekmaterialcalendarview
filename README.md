@@ -2,7 +2,8 @@
 [![](https://jitpack.io/v/idic779/monthweekmaterialcalendarview.svg)](https://jitpack.io/#idic779/monthweekmaterialcalendarview)
  [![API](https://img.shields.io/badge/API-22%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=22)
 
-[apk download](https://github.com/idic779/MonthWeekMaterialCalendarView/raw/master/monthweekview.apk)
+[apk download](https://www.pgyer.com/PUxF)
+
 ![p.jpg](https://github.com/idic779/MonthWeekMaterialCalendarView/raw/master/QRCode.png)
 
 #### 觉得有帮助的可以给个star,有问题联系 idic779@163.com  QQ 290950778，有定制问题直接提issue
