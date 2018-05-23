@@ -23,6 +23,8 @@
 * 流畅的上下周月模式切换
 * 允许选择农历和普通日历
 * 丰富自定义日历样式
+* 设置每周的第一天
+* 设置某一天不允许选中
 * 基于material-calendarview 这个库实现，可以下载源码根据需求定制效果
 #### 更新日志
 #### V1.7
@@ -131,35 +133,35 @@ dependencies {
 * 底部的recyclerView的layoutManager要实现ILayoutManager接口，设置是否允许上下滑动，
 例如示例中的[CustomLinearLayoutManager.java](https://github.com/idic779/monthweekmaterialcalendarview/blob/master/app/src/main/java/com/amy/monthweekmaterialcalendarview/CustomLinearLayoutManager.java)
 
-* 设置当前日期，日历才会滚动到对应日期
+#### 设置当前日期，日历才会滚动到对应日期
 
     monthWeekMaterialCalendarView.setCurrentDate(selectedDate);
 
-* 设置选中日期
+#### 设置选中日期
 
     monthWeekMaterialCalendarView.setSelectedDate(selectedDate)
-* 添加日历的样式，例如红点 或者自定义图案
+#### 添加日历的样式，例如红点 或者自定义图案
 
     monthWeekMaterialCalendarView.addDecorator(new EventDecorator(Color.RED, dates))
-* 移除日历样式
+#### 移除日历样式
 
     monthWeekMaterialCalendarView.removeDecorators();
-* 设置当前的模式
+#### 设置当前的模式
 
     monthWeekMaterialCalendarView.setMode(MonthWeekMaterialCalendarView.Mode.MONTH)
-* 跳转到上一个月
+#### 跳转到上一个月
 
     monthWeekMaterialCalendarView.goToPrevious();
-* 跳转到下个月
+#### 跳转到下个月
 
     monthWeekMaterialCalendarView.goToNext();
-* 设置是否允许竖直拖动，默认是允许拖动切换周月模式
+#### 设置是否允许竖直拖动，默认是允许拖动切换周月模式
 
     monthWeekMaterialCalendarView.setCanDrag
-* 设置是否允许左右滑动
+#### 设置是否允许左右滑动
 
     monthWeekMaterialCalendarView.setPagingEnabled
-* 添加选中日期、模式改变 或者月份改变的回调
+#### 添加选中日期、模式改变 或者月份改变的回调
 
 ```java
     monthWeekMaterialCalendarView.state().edit()
@@ -183,7 +185,7 @@ dependencies {
             }
         }).commit();
 ```
-* 设置选中颜色
+#### 设置选中颜色
     monthWeekMaterialCalendarView.setSelectionColor
     因为基于MaterialCalendarView的周和月视图组成的，所以可以在XML中设置选中颜色，字体样式等等
 ```xml
@@ -234,7 +236,7 @@ public class RemindDecorator implements DayViewDecorator {
 * decorate()这个方法可以对显示样式做一些操作
 
 DayViewFacade 可以通过setSelectionDrawable()，setBackgroundDrawable(),addSpan()设置样式，尤其是addSpan的方法，因为你传进去的是一个span,所以你可以在里面做很多自定义样式的操作，例如
-[RestSpan.java](https://github.com/idic779/monthweekmaterialcalendarview/blob/master/app/src/main/java/com/amy/monthweekmaterialcalendarview/decorators/RestSpan.java)周末右上角加个图标，甚至可以让图标动起来。
+[RestSpan.java](https://github.com/idic779/monthweekmaterialcalendarview/blob/master/app/src/main/java/com/amy/monthweekmaterialcalendarview/decorators/RestSpan.java)周末右上角加个图标。
 # 还可以怎么用
 
       接下来说下你可以怎么去定制？如果你想替换项目中的月和周视图的话，很简单，
